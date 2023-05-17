@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ABD2D3;
+}
+
+#form-box
+{
+    width: 100%;
+    margin: 50px 150px 0 150px;
+    background-color: white;
+    border-radius: 2px;
+    overflow-y: scroll;
+}
+
