@@ -1,22 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-body
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
+html,
+body {
+    height: 100%;
 }
 
-.flex-row
-{
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.flex-row {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-.flex-col
-{
+.flex-col {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.flex-center
+{
+    align-items: center;
+    justify-content: center;
 }

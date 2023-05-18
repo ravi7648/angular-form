@@ -1,0 +1,32 @@
+<div class="input-element">
+    <button mat-raised-button color="primary" (click)="addElement()">Text</button>
+    <button mat-raised-button color="primary" (click)="addElement()">Choice</button>
+    <button mat-raised-button color="primary" (click)="addElement()">Email</button>
+    <button mat-raised-button color="primary" (click)="addElement()">Date</button>
+    <button mat-raised-button color="primary" (click)="addElement()">Rating</button>
+    <div style="margin-top: 75px;" class="bulk-add">
+        <mat-form-field>
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected">
+                <mat-option *ngFor="let input of inputs" [value]="input">
+                    {{input}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+        <div class="counter flex-row flex-center">
+            <button mat-mini-fab color="accent" (click)="dec()">
+                <mat-icon>remove</mat-icon>
+            </button>
+            <div style="margin-left: 15px; margin-right: 15px;">
+                {{totalCount}}
+            </div>
+            <button mat-mini-fab color="accent" (click)="inc()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        <div style="margin-top: 20px;" class="flex-row flex-center">
+            <button mat-stroked-button color="primary">Add {{totalCount}} {{selected | lowercase}} elements</button>
+        </div>
+    </div>
+</div>

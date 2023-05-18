@@ -1,8 +1,17 @@
-:host
-{
+:host {
+    /* flex: 0 0 auto; */
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 60px;
     width: 100vw;
+    box-sizing: border-box;
     background-color: #03787C;
-    padding: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#form-title
+{
+    margin: 10px;
 }

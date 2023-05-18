@@ -1,5 +1,8 @@
-<app-header></app-header>
-<div class="flex-row">
-    <app-form-view></app-form-view>
-    <app-form-element></app-form-element>
+<app-header [formTitle]="formTitle"></app-header>
+<div class="flex-row flex-position">
+    <app-form-view [formTitle]="formTitle" (formTitleChange)="formTitle=$event"></app-form-view>
+    <app-form-element *ngIf="showElement"></app-form-element>
+    <button class="show-element" mat-mini-fab color="primary" (click)="showFormElement()">
+        <mat-icon>{{sideIcon}}</mat-icon>
+    </button>
 </div>
