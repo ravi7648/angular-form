@@ -23,7 +23,6 @@ export class FormViewComponent{
 
   assignFormTarget(value: AnchorDirective)
   {
-    console.log(value);
     this.targetFormChange.emit(value);
   }
 }

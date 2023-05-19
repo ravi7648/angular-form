@@ -12,6 +12,7 @@ export class FormEditViewComponent {
   formTitle = "Untitled form";
   formTarget !: AnchorDirective;
   anchored = false;
+  questionNumber = 0;
 
   showFormElement()
   {    

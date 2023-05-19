@@ -19,6 +19,8 @@
     padding: 0 10px 10px 20px;
     border-top: 3px solid #03787C;
     margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    ;
 }
 
 .element-menu {
@@ -38,10 +40,51 @@
     margin-bottom: 20px;
 }
 
-.select-toggle-btn {
+.radio-element {
+    align-items: center;
+}
+
+.radio-element-component {
+    margin-left: 20px;
+}
+
+.radio-element-btn {
+    color: #03787C !important;
+}
+
+.long-answer-text .mat-mdc-form-field-infix {
+    width: 100%;
+}
+
+.long-answer-text .mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled.mdc-text-field--no-label.mdc-text-field--disabled {
+    height: max-content !important;
+}
+
+.form-bottom-btn {
     justify-content: flex-end;
     height: 30px;
     margin-bottom: 5px;
+    gap: 5px;
+}
+
+.choices {
+    margin-top: 15px;
+}
+
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.square {
+    height: 15px;
+    width: 15px;
+    border-radius: 3px;
+    border: 1px solid black;
+    background-color: white;
 }
 
 .mat-mdc-slide-toggle.mat-primary {

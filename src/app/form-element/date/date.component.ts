@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-date',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./date.component.css']
 })
 export class DateComponent {
-
+  buttonsRequired = ['Required']
+  @Input() questionNumber !: number;
 }

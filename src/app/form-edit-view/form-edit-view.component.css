@@ -5,13 +5,11 @@
     width: 100vw;
 }
 
-.flex-position
-{
+.flex-position {
     position: relative;
 }
 
-.show-element
-{
+.show-element {
     position: absolute;
     top: 10px;
     left: 100%;

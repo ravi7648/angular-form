@@ -1,3 +1,9 @@
 <form class="form-box">
-    <app-question></app-question>
+    <app-question [questionNumber]="questionNumber"></app-question>
+    <div class="element-component">
+      <mat-form-field class="mat-input-field">
+        <input type="email" matInput placeholder="Enter your Email" disabled="true">
+      </mat-form-field>
+  </div>
+  <app-bottom-icons [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

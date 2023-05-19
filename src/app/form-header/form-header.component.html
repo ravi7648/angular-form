@@ -1,8 +1,16 @@
 <div class="flex-row flex-center" style="color: white">
-    <mat-icon>insert_drive_file</mat-icon>
-    <h4 id="form-title"> {{formTitle}} </h4>
+  <mat-icon>insert_drive_file</mat-icon>
+  <h4 id="form-title">{{ formTitle }}</h4>
 </div>
 
-<a mat-icon-button href="/preview" target="_blank" style="color: white">
+<div class="right-icon">
+  <a mat-icon-button href="/preview" target="_blank" style="color: white">
     <mat-icon>visibility</mat-icon>
-</a>
+  </a>
+  <span> Preview </span>
+
+  <a mat-icon-button href="/preview" target="_blank" style="color: white; margin-left: 10px;">
+    <mat-icon>save</mat-icon>
+  </a>
+  <span> Save </span>
+</div>

@@ -14,11 +14,13 @@
     background-color: white;
     border-radius: 2px;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding: 30px;
 }
 
-#title
-{
+#title {
+    padding-left: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -28,7 +30,6 @@
     font-weight: 100;
 }
 
-#title:hover
-{
-    background-color: rgb(217, 217, 217);
+#title:hover {
+    background-color: rgb(239, 239, 239);
 }

@@ -1,3 +1,12 @@
 <form class="form-box">
-    <app-question></app-question>
+    <app-question [questionNumber]="questionNumber"></app-question>
+    <div class="element-component">
+        <mat-form-field class="mat-date-field">
+            <mat-label>Please input date (MM/DD/YYYY)</mat-label>
+            <input matInput [matDatepicker]="dp1" disabled>
+            <mat-datepicker-toggle matIconSuffix [for]="dp1"></mat-datepicker-toggle>
+            <mat-datepicker #dp1></mat-datepicker>
+          </mat-form-field>
+    </div>
+    <app-bottom-icons [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

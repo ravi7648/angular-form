@@ -1,5 +1,4 @@
 :host {
-    /* flex: 0 0 auto; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +10,12 @@
     padding-left: 20px;
 }
 
-#form-title
-{
+#form-title {
     margin: 10px;
+}
+
+.right-icon {
+    color: white;
+    display: flex;
+    align-items: center;
 }

@@ -21,23 +21,29 @@ body {
     height: 100%;
 }
 
-.flex-center
-{
+.flex-center {
     align-items: center;
     justify-content: center;
 }
 
-.add-btn
-{
-    background-color: #03787C !important; 
-    color: white !important; 
+.add-btn {
+    background-color: #03787C !important;
+    color: white !important;
 }
 
-.mat-input-field, .mat-input-field *
-{
+.mat-input-field,
+.mat-input-field * {
     height: 35px !important;
     padding: 0 !important;
     padding-left: 2px !important;
     width: 100%;
     display: block !important;
+}
+
+.mat-date-field {
+    width: 100%;
+}
+
+.mat-input-field .mat-mdc-form-field-infix {
+    width: 100% !important;
 }

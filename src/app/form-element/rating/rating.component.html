@@ -1,3 +1,17 @@
 <form class="form-box">
-    <app-question></app-question>
+  <app-question [questionNumber]="questionNumber"></app-question>
+  <div class="element-component flex-row">
+    <mat-form-field  style="width: 300px">
+      <mat-select [(value)]="selected">
+        <mat-option *ngFor="let rate of ratingScale" [value]="rate">
+          {{ rate }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="hint-box flex-col flex-center" style="margin-left: 20px; font-weight: 500">
+      <div>0 - Not at all likely</div>
+      <div>10 - Extremely Likely</div>
+    </div>
+  </div>
+  <app-bottom-icons [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

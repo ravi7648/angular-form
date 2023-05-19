@@ -1,20 +1,14 @@
 <form class="form-box">
-    <app-question></app-question>
-    <div class="element-component">
+    <app-question [questionNumber]="questionNumber"></app-question>
+    <div *ngIf="!isLongAnswer" class="element-component">
         <mat-form-field class="mat-input-field">
             <input matInput placeholder="Enter your Answer" disabled="true">
         </mat-form-field>
     </div>
-    <mat-divider style="margin-bottom: 10px;"></mat-divider>
-    <div class="flex-row select-toggle-btn">
-        <mat-slide-toggle color="primary" style="width: 150px">Long answer</mat-slide-toggle>
-        <mat-slide-toggle color="primary" style="width: 150px">Required</mat-slide-toggle>
+    <div *ngIf="isLongAnswer" class="element-component long-answer-text" style="height: max-content !important;">
+        <mat-form-field class="mat-input-field" style="height: max-content !important;">
+            <textarea matInput placeholder="Enter your Answer" cdkTextareaAutosize disabled="true"></textarea>
+        </mat-form-field>
     </div>
-    <!-- <mat-form-field class="mat-input-field">
-        <input matInput placeholder="Question">
-    </mat-form-field>
-    <mat-form-field class="mat-input-field">
-        <mat-label>Leave a comment</mat-label>
-        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field> -->
+    <app-bottom-icons [isChecked]="isLongAnswer" (isCheckedChange)="isLongAnswer=$event" [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

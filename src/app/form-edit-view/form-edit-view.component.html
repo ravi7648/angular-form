@@ -1,7 +1,7 @@
 <app-header [formTitle]="formTitle"></app-header>
 <div class="flex-row flex-position">
     <app-form-view [formTarget]="formTarget" [formTitle]="formTitle" (formTitleChange)="formTitle=$event" (targetFormChange)="setFormTarget($event)"></app-form-view>
-    <app-form-element *ngIf="showElement" [formTarget]="formTarget" ></app-form-element>
+    <app-form-element *ngIf="showElement" [formTarget]="formTarget" [questionNumber]="questionNumber"></app-form-element>
     <button *ngIf="anchored" class="show-element add-btn" mat-mini-fab color="primary" (click)="showFormElement()">
         <mat-icon>{{sideIcon}}</mat-icon>
     </button>

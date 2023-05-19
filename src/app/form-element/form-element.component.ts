@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { TextComponent } from './text/text.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { DateComponent } from './date/date.component';
@@ -19,6 +19,7 @@ export class FormElementComponent {
   selected = 'Text';
 
   @Input() formTarget !: AnchorDirective;
+  @Input() questionNumber !: number;
 
   inc() { this.totalCount++; }
   dec() {
@@ -28,7 +29,6 @@ export class FormElementComponent {
 
   addBulkElements(component: string, count: number)
   {
-    component = component.toLowerCase();
     for (let i in [...Array(count)])
     {
       this.addElement(component)
@@ -36,19 +36,25 @@ export class FormElementComponent {
   }
 
   addElement(component: string)
-  {
+  {    
+    this.questionNumber++;    
     const viewContainerRef = this.formTarget.viewContainerRef;
     switch(component)
     {
-      case 'Text': viewContainerRef.createComponent(TextComponent);
+      case 'Text': const textRef= viewContainerRef.createComponent(TextComponent);
+      textRef.instance.questionNumber = this.questionNumber;
       break;
-      case 'Choice': viewContainerRef.createComponent(ChoiceComponent);
+      case 'Choice': const choiceRef =  viewContainerRef.createComponent(ChoiceComponent);
+      choiceRef.instance.questionNumber = this.questionNumber;
       break
-      case 'Email': viewContainerRef.createComponent(EmailComponent);
+      case 'Email': const emailRef = viewContainerRef.createComponent(EmailComponent);
+      emailRef.instance.questionNumber = this.questionNumber;
       break
-      case 'Date': viewContainerRef.createComponent(DateComponent);
+      case 'Date': const dateRef = viewContainerRef.createComponent(DateComponent);
+      dateRef.instance.questionNumber = this.questionNumber;
       break
-      case 'Rating': viewContainerRef.createComponent(RatingComponent);
+      case 'Rating': const ratingRef = viewContainerRef.createComponent(RatingComponent);
+      ratingRef.instance.questionNumber = this.questionNumber;
       break
     }
   }
@@ -56,6 +62,7 @@ export class FormElementComponent {
   clearForm()
   {
     const viewContainerRef = this.formTarget.viewContainerRef;
+    this.questionNumber = 0;
     viewContainerRef.clear();
   }
 }

@@ -8,7 +8,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormHeaderComponent } from './form-header/form-header.component';
 import { FormElementComponent } from './form-element/form-element.component';
 import { FormViewComponent } from './form-view/form-view.component';
@@ -22,6 +25,7 @@ import { RatingComponent } from './form-element/rating/rating.component';
 import { ChoiceComponent } from './form-element/choice/choice.component';
 import { AnchorDirective } from './anchor.directive';
 import { QuestionComponent } from './form-element/question/question.component';
+import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,7 @@ import { QuestionComponent } from './form-element/question/question.component';
     ChoiceComponent,
     AnchorDirective,
     QuestionComponent,
+    BottomIconsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,10 @@ import { QuestionComponent } from './form-element/question/question.component';
     MatIconModule,
     MatInputModule,
     MatDividerModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
@@ -8,5 +8,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class TextComponent {
-
+  isLongAnswer = false;
+  buttonsRequired = ['Required', 'LongAnswer']
+  @Input() questionNumber !: number;
 }
