@@ -1,1 +1,20 @@
-<p>text works!</p>
+<form class="form-box">
+    <app-question></app-question>
+    <div class="element-component">
+        <mat-form-field class="mat-input-field">
+            <input matInput placeholder="Enter your Answer" disabled="true">
+        </mat-form-field>
+    </div>
+    <mat-divider style="margin-bottom: 10px;"></mat-divider>
+    <div class="flex-row select-toggle-btn">
+        <mat-slide-toggle color="primary" style="width: 150px">Long answer</mat-slide-toggle>
+        <mat-slide-toggle color="primary" style="width: 150px">Required</mat-slide-toggle>
+    </div>
+    <!-- <mat-form-field class="mat-input-field">
+        <input matInput placeholder="Question">
+    </mat-form-field>
+    <mat-form-field class="mat-input-field">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    </mat-form-field> -->
+</form>

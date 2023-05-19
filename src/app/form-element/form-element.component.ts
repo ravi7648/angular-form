@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { TextComponent } from './text/text.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { DateComponent } from './date/date.component';
@@ -9,7 +9,8 @@ import { AnchorDirective } from '../anchor.directive';
 @Component({
   selector: 'app-form-element',
   templateUrl: './form-element.component.html',
-  styleUrls: ['./form-element.component.css']
+  styleUrls: ['./form-element.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class FormElementComponent {
@@ -36,22 +37,25 @@ export class FormElementComponent {
 
   addElement(component: string)
   {
-    console.log(this.formTarget.viewContainerRef);
     const viewContainerRef = this.formTarget.viewContainerRef;
-    // const componentRef = viewContainerRef.createComponent(TextComponent);
-    // viewContainerRef.clear();
     switch(component)
     {
-      case 'text': viewContainerRef.createComponent(TextComponent);
+      case 'Text': viewContainerRef.createComponent(TextComponent);
       break;
-      case 'choice': viewContainerRef.createComponent(ChoiceComponent);
+      case 'Choice': viewContainerRef.createComponent(ChoiceComponent);
       break
-      case 'email': viewContainerRef.createComponent(EmailComponent);
+      case 'Email': viewContainerRef.createComponent(EmailComponent);
       break
-      case 'date': viewContainerRef.createComponent(DateComponent);
+      case 'Date': viewContainerRef.createComponent(DateComponent);
       break
-      case 'rating': viewContainerRef.createComponent(RatingComponent);
+      case 'Rating': viewContainerRef.createComponent(RatingComponent);
       break
     }
+  }
+
+  clearForm()
+  {
+    const viewContainerRef = this.formTarget.viewContainerRef;
+    viewContainerRef.clear();
   }
 }
