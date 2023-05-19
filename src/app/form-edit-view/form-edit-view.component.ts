@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { AnchorDirective } from '../anchor.directive';
 
 @Component({
@@ -10,6 +10,8 @@ export class FormEditViewComponent {
   showElement = false;
   sideIcon = "menu";
   formTitle = "Untitled form";
+  formTarget !: AnchorDirective;
+  anchored = false;
 
   showFormElement()
   {    
@@ -23,5 +25,12 @@ export class FormEditViewComponent {
       this.showElement = false
       this.sideIcon = "menu"
     }
+  }
+
+  setFormTarget(target: AnchorDirective)
+  {
+    this.formTarget = target
+    this.anchored = true;
+    this.showFormElement()
   }
 }
