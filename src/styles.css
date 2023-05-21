@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/style.scss";
+
 html,
 body {
     height: 100%;
@@ -6,6 +8,8 @@ body {
 
 body {
     margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 

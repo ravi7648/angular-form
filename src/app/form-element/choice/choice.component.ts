@@ -24,6 +24,6 @@ export class ChoiceComponent {
   addChoice(type: string)
   {
     type == "otherOption"? this.otherRef.createEmbeddedView(this.choiceOtherRef) : this.vRef.createEmbeddedView(this.choiceRef)
-    this.clicked = (type == "otherOption");
+    if (!this.clicked) this.clicked = (type == "otherOption");
   }
 }

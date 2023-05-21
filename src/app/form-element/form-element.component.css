@@ -20,7 +20,12 @@
     border-top: 3px solid #03787C;
     margin-bottom: 50px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    ;
+}
+
+.form-box:hover {
+    scale: 1.01;
+    transition: 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.30) 1.95px 1.95px 2.6px;
 }
 
 .element-menu {

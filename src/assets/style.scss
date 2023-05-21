@@ -1,0 +1,17 @@
+.mat-mdc-snack-bar-container {
+  &.purple-snackbar {
+    --mdc-snackbar-container-color: #03787c;
+    --mat-mdc-snack-bar-button-color: #03787c;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+.purple-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
+  --mdc-dialog-container-color: #03787c;
+  --mat-mdc-dialog-button-color: #03787c;
+  --mdc-dialog-supporting-text-color: #fff;
+  --mdc-dialog-subhead-color: #fff;
+  .mat-mdc-button.mat-unthemed {
+    --mdc-text-button-label-text-color: #fff !important;
+  }
+}

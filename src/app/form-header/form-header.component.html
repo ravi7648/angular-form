@@ -9,8 +9,8 @@
   </a>
   <span> Preview </span>
 
-  <a mat-icon-button href="/preview" target="_blank" style="color: white; margin-left: 10px;">
+  <app-snackbar [snackbarDuration]="snackbarDuration" [snackbarMessage]="actionMessage" [snackbarAction]="actionStatus">
     <mat-icon>save</mat-icon>
-  </a>
+  </app-snackbar>
   <span> Save </span>
 </div>

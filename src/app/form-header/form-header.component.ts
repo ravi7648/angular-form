@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class FormHeaderComponent {
   @Input() formTitle !: string;
+  actionName = 'Save';
+  actionMessage = 'Form saved successfully';
+  actionStatus = 'OK';
+  snackbarDuration = 2;
 }

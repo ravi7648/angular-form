@@ -11,6 +11,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule  } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormHeaderComponent } from './form-header/form-header.component';
 import { FormElementComponent } from './form-element/form-element.component';
@@ -26,6 +28,8 @@ import { ChoiceComponent } from './form-element/choice/choice.component';
 import { AnchorDirective } from './anchor.directive';
 import { QuestionComponent } from './form-element/question/question.component';
 import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.component';
+import { DialogComponent, CustomDialogComponent } from './form-ui-material/dialog/dialog.component';
+import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,9 @@ import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.c
     AnchorDirective,
     QuestionComponent,
     BottomIconsComponent,
+    DialogComponent,
+    CustomDialogComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,8 @@ import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.c
     MatSlideToggleModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSnackBarModule,
+    MatDialogModule,
     ReactiveFormsModule
   ],
   providers: [],

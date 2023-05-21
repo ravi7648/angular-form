@@ -1,0 +1,9 @@
+<span class="custom-snackbar-message" matSnackBarLabel>
+  {{snackbarMessage}}
+</span>
+<span matSnackBarActions>
+  <button class="custom-snackbar-action"
+    mat-button
+    matSnackBarAction
+    (click)="snackBarRef.dismissWithAction()"> {{snackbarAction}}  </button>
+</span>
