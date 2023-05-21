@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { TextComponent } from './text/text.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { DateComponent } from './date/date.component';
@@ -13,13 +13,25 @@ import { AnchorDirective } from '../anchor.directive';
   encapsulation: ViewEncapsulation.None
 })
 
-export class FormElementComponent {
+export class FormElementComponent implements OnChanges{
+
+  constructor() { }
+  
   inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating']
   totalCount: number = 0;
   selected = 'Text';
-
+  customStyle: string = '';
+  
+  @Input() draggable : boolean = false;
   @Input() formTarget !: AnchorDirective;
   @Input() questionNumber !: number;
+
+  ngOnChanges() { 
+    if (this.draggable)
+      this.customStyle = `box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;`;
+    else
+      this.customStyle = '';
+  }
 
   inc() { this.totalCount++; }
   dec() {
@@ -29,11 +41,12 @@ export class FormElementComponent {
 
   addBulkElements(component: string, count: number) {
     for (let i in [...Array(count)]) {
-      this.addElement(component)
+      this.addElement(component, false)
     }
   }
 
-  addElement(component: string) {
+  addElement(component: string, draggable: boolean) {
+    if (draggable) return;
     this.questionNumber++;
     const viewContainerRef = this.formTarget.viewContainerRef;
     switch (component) {
@@ -58,6 +71,11 @@ export class FormElementComponent {
         ratingRef.instance.formTarget = this.formTarget;
         break
     }
+  }
+
+  onDragEnded(event: any) {
+    this.addElement(event.source.element.nativeElement.innerText, false);
+    event.source.reset();
   }
 
   clearForm() {

@@ -13,6 +13,7 @@ export class FormEditViewComponent {
   formTarget !: AnchorDirective;
   anchored = false;
   questionNumber = 0;
+  draggable = false;
 
   showFormElement() {
     if (this.sideIcon == 'menu') {

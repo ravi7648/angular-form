@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,18 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./form-header.component.css']
 })
 export class FormHeaderComponent {
-  @Input() formTitle !: string;
   actionName = 'Save';
   actionMessage = 'Form saved successfully';
   actionStatus = 'OK';
   snackbarDuration = 2;
+  
+  @Input() formTitle !: string;
+  @Input() draggable : boolean = false;
+
+  @Output() draggableChange = new EventEmitter<boolean>();
+
+  toggleDraggable(draggable: boolean)
+  {
+    this.draggableChange.emit(draggable);
+  }
 }

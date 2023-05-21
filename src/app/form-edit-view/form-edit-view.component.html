@@ -1,4 +1,4 @@
-<app-header [formTitle]="formTitle"></app-header>
+<app-header [draggable]="draggable" (draggableChange)="draggable=$event" [formTitle]="formTitle"></app-header>
 <div class="flex-row flex-position">
   <app-form-view
     [formTarget]="formTarget"
@@ -10,6 +10,7 @@
     *ngIf="showElement"
     [formTarget]="formTarget"
     [questionNumber]="questionNumber"
+    [draggable]="draggable"
   ></app-form-element>
   <button
     *ngIf="anchored"

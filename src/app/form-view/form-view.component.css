@@ -22,7 +22,20 @@
 }
 
 #form-container::-webkit-scrollbar {
-    display: none;
+    width: 10px;
+}
+
+#form-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#form-container::-webkit-scrollbar-thumb {
+    background: #03787C;
+    border-radius: 5px;
+}
+
+#form-container::-webkit-scrollbar-thumb:hover {
+    background: #04999e;
 }
 
 #title {

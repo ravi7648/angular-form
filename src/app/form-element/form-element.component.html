@@ -2,9 +2,13 @@
   <button
     *ngFor="let element of inputs"
     class="add-btn"
+    [style]="customStyle"
     mat-raised-button
     color="primary"
-    (click)="addElement(element)"
+    (click)="addElement(element, draggable)"
+    (cdkDragEnded)="onDragEnded($event)"
+    cdkDrag
+    [cdkDragDisabled]="!draggable"
   >
     {{ element }}
   </button>

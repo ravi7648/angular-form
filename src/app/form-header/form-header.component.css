@@ -19,3 +19,33 @@
     display: flex;
     align-items: center;
 }
+
+.mat-mdc-slide-toggle.mat-primary {
+    --mdc-switch-disabled-selected-handle-color: #424242;
+    --mdc-switch-disabled-unselected-handle-color: #424242;
+    --mdc-switch-disabled-selected-track-color: #424242;
+    --mdc-switch-disabled-unselected-track-color: #424242;
+    --mdc-switch-unselected-focus-state-layer-color: #424242;
+    --mdc-switch-unselected-pressed-state-layer-color: #424242;
+    --mdc-switch-unselected-hover-state-layer-color: #424242;
+    --mdc-switch-unselected-focus-track-color: #e0e0e0;
+    --mdc-switch-unselected-hover-track-color: #e0e0e0;
+    --mdc-switch-unselected-pressed-track-color: #e0e0e0;
+    --mdc-switch-unselected-track-color: #e0e0e0;
+    --mdc-switch-selected-focus-track-color: #e0e0e0;
+    --mdc-switch-selected-hover-track-color: #e0e0e0;
+    --mdc-switch-selected-pressed-track-color: #e0e0e0;
+    --mdc-switch-selected-track-color: #e0e0e0;
+    --mdc-switch-unselected-focus-handle-color: #fff;
+    --mdc-switch-unselected-hover-handle-color: #d2d2d2;
+    --mdc-switch-unselected-pressed-handle-color: #d2d2d2;
+    --mdc-switch-unselected-handle-color: #fff;
+    --mdc-switch-selected-focus-handle-color: #fff;
+    --mdc-switch-selected-hover-handle-color: #d2d2d2;
+    --mdc-switch-selected-pressed-handle-color: #d2d2d2;
+    --mdc-switch-selected-handle-color: #fff;
+    --mdc-switch-selected-icon-color: #03787C;
+    --mdc-switch-disabled-selected-icon-color: #fff;
+    --mdc-switch-disabled-unselected-icon-color: #fff;
+    --mdc-switch-unselected-icon-color: #03787C;
+}

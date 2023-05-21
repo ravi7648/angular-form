@@ -13,6 +13,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -68,7 +70,9 @@ import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.componen
     MatNativeDateModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatTooltipModule,
     ClipboardModule,
+    DragDropModule,
     ReactiveFormsModule,
     FormsModule
   ],

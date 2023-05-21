@@ -17,4 +17,11 @@
     <mat-icon>save</mat-icon>
   </app-snackbar>
   <span> Save </span>
+  <mat-slide-toggle
+    matTooltip="Enable Drag & Drop"
+    color="primary"
+    style="margin-left: 15px"
+    (change)="toggleDraggable($event.checked)"
+  >
+  </mat-slide-toggle>
 </div>
