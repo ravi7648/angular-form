@@ -74,7 +74,11 @@ export class FormElementComponent implements OnChanges{
   }
 
   onDragEnded(event: any) {
-    this.addElement(event.source.element.nativeElement.innerText, false);
+    let currentDropArea = document.elementFromPoint(event.dropPoint.y, event.dropPoint.x);
+    let droppableArea = document.getElementById('form-container');
+    if (droppableArea == currentDropArea?.closest('#form-container')) {
+      this.addElement(event.source.element.nativeElement.innerText, false);
+    }
     event.source.reset();
   }
 
