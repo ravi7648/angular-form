@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnchorDirective } from 'src/app/anchor.directive';
 
 @Component({
   selector: 'app-email',
@@ -7,5 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class EmailComponent {
   buttonsRequired = ['Required']
+  elementType = 'Email'
+  question = '';
+
   @Input() questionNumber !: number;
+  @Input() formTarget !: AnchorDirective;
 }

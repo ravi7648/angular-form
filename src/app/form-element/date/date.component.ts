@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnchorDirective } from 'src/app/anchor.directive';
 
 @Component({
   selector: 'app-date',
@@ -7,5 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class DateComponent {
   buttonsRequired = ['Required']
+  elementType = 'Date'
+  question = '';
   @Input() questionNumber !: number;
+  @Input() formTarget !: AnchorDirective;
 }

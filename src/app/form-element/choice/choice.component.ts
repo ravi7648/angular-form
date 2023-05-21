@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
-import { TextComponent } from '../text/text.component';
+import { AnchorDirective } from 'src/app/anchor.directive';
 
 @Component({
   selector: 'app-choice',
@@ -11,9 +11,12 @@ export class ChoiceComponent {
   options = [...Array(this.totalOptions).keys()];
   buttonsRequired = ['Required', 'MultipleAnswer'];
   clicked = false;
-  choiceType = 'circle'
+  choiceType = 'circle';
+  elementType = 'Choice';
+  question = '';
 
   @Input() questionNumber !: number;
+  @Input() formTarget !: AnchorDirective;
 
   @ViewChild('choiceBoxRef', { read: ViewContainerRef, static: true }) vRef !: ViewContainerRef;
   @ViewChild('choiceOtherContainerRef', { read: ViewContainerRef, static: true }) otherRef !: ViewContainerRef;
@@ -21,9 +24,8 @@ export class ChoiceComponent {
   @ViewChild('choiceRef', { read: TemplateRef, static: true }) choiceRef !: TemplateRef<any>;
   @ViewChild('choiceOtherRef', { read: TemplateRef, static: true }) choiceOtherRef !: TemplateRef<any>;
 
-  addChoice(type: string)
-  {
-    type == "otherOption"? this.otherRef.createEmbeddedView(this.choiceOtherRef) : this.vRef.createEmbeddedView(this.choiceRef)
+  addChoice(type: string) {
+    type == "otherOption" ? this.otherRef.createEmbeddedView(this.choiceOtherRef) : this.vRef.createEmbeddedView(this.choiceRef)
     if (!this.clicked) this.clicked = (type == "otherOption");
   }
 }

@@ -14,22 +14,18 @@ export class FormEditViewComponent {
   anchored = false;
   questionNumber = 0;
 
-  showFormElement()
-  {    
-    if (this.sideIcon=='menu')
-    {
+  showFormElement() {
+    if (this.sideIcon == 'menu') {
       this.showElement = true
       this.sideIcon = "close"
     }
-    else
-    {
+    else {
       this.showElement = false
       this.sideIcon = "menu"
     }
   }
 
-  setFormTarget(target: AnchorDirective)
-  {
+  setFormTarget(target: AnchorDirective) {
     this.formTarget = target
     this.anchored = true;
     this.showFormElement()

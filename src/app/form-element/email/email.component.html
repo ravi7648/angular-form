@@ -1,9 +1,19 @@
 <form class="form-box">
-    <app-question [questionNumber]="questionNumber"></app-question>
-    <div class="element-component">
-      <mat-form-field class="mat-input-field">
-        <input type="email" matInput placeholder="Enter your Email [eg: xyz@domain.com]" disabled="true">
-      </mat-form-field>
+  <app-question
+    [formTarget]="formTarget"
+    [elementType]="elementType"
+    [questionNumber]="questionNumber"
+    [questionText]="question"
+  ></app-question>
+  <div class="element-component">
+    <mat-form-field class="mat-input-field">
+      <input
+        type="email"
+        matInput
+        placeholder="Enter your Email [eg: xyz@domain.com]"
+        disabled="true"
+      />
+    </mat-form-field>
   </div>
   <app-bottom-icons [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

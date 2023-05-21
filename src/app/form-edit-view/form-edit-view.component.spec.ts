@@ -8,9 +8,9 @@ describe('FormEditViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormEditViewComponent ]
+      declarations: [FormEditViewComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FormEditViewComponent);
     component = fixture.componentInstance;

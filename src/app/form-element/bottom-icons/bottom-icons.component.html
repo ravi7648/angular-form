@@ -1,6 +1,20 @@
-<mat-divider style="margin-bottom: 10px;"></mat-divider>
+<mat-divider style="margin-bottom: 10px"></mat-divider>
 <div class="flex-row form-bottom-btn">
-    <mat-slide-toggle *ngIf="multipleAnswer" color="primary" style="width: 150px" (change)="checkChoiceType($event)">Multiple answers</mat-slide-toggle>
-    <mat-slide-toggle *ngIf="longAnswer" color="primary" style="width: 150px" (change)="checkSelected($event)">Long answer</mat-slide-toggle>
-    <mat-slide-toggle *ngIf="required" color="primary" style="width: 150px">Required</mat-slide-toggle>
+  <mat-slide-toggle
+    *ngIf="multipleAnswer"
+    color="primary"
+    style="width: 150px"
+    (change)="checkChoiceType($event)"
+    >Multiple answers</mat-slide-toggle
+  >
+  <mat-slide-toggle
+    *ngIf="longAnswer"
+    color="primary"
+    style="width: 150px"
+    (change)="checkSelected($event)"
+    >Long answer</mat-slide-toggle
+  >
+  <mat-slide-toggle *ngIf="required" color="primary" style="width: 150px"
+    >Required</mat-slide-toggle
+  >
 </div>

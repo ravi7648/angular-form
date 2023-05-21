@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { TextComponent } from './text/text.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { DateComponent } from './date/date.component';
@@ -27,40 +27,40 @@ export class FormElementComponent {
       this.totalCount--;
   }
 
-  addBulkElements(component: string, count: number)
-  {
-    for (let i in [...Array(count)])
-    {
+  addBulkElements(component: string, count: number) {
+    for (let i in [...Array(count)]) {
       this.addElement(component)
     }
   }
 
-  addElement(component: string)
-  {    
-    this.questionNumber++;    
+  addElement(component: string) {
+    this.questionNumber++;
     const viewContainerRef = this.formTarget.viewContainerRef;
-    switch(component)
-    {
-      case 'Text': const textRef= viewContainerRef.createComponent(TextComponent);
-      textRef.instance.questionNumber = this.questionNumber;
-      break;
-      case 'Choice': const choiceRef =  viewContainerRef.createComponent(ChoiceComponent);
-      choiceRef.instance.questionNumber = this.questionNumber;
-      break
+    switch (component) {
+      case 'Text': const textRef = viewContainerRef.createComponent(TextComponent);
+        textRef.instance.questionNumber = this.questionNumber;
+        textRef.instance.formTarget = this.formTarget;
+        break;
+      case 'Choice': const choiceRef = viewContainerRef.createComponent(ChoiceComponent);
+        choiceRef.instance.questionNumber = this.questionNumber;
+        choiceRef.instance.formTarget = this.formTarget;
+        break
       case 'Email': const emailRef = viewContainerRef.createComponent(EmailComponent);
-      emailRef.instance.questionNumber = this.questionNumber;
-      break
+        emailRef.instance.questionNumber = this.questionNumber;
+        emailRef.instance.formTarget = this.formTarget;
+        break
       case 'Date': const dateRef = viewContainerRef.createComponent(DateComponent);
-      dateRef.instance.questionNumber = this.questionNumber;
-      break
+        dateRef.instance.questionNumber = this.questionNumber;
+        dateRef.instance.formTarget = this.formTarget;
+        break
       case 'Rating': const ratingRef = viewContainerRef.createComponent(RatingComponent);
-      ratingRef.instance.questionNumber = this.questionNumber;
-      break
+        ratingRef.instance.questionNumber = this.questionNumber;
+        ratingRef.instance.formTarget = this.formTarget;
+        break
     }
   }
 
-  clearForm()
-  {
+  clearForm() {
     const viewContainerRef = this.formTarget.viewContainerRef;
     this.questionNumber = 0;
     viewContainerRef.clear();

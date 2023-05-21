@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnchorDirective } from 'src/app/anchor.directive';
 
 @Component({
   selector: 'app-rating',
@@ -6,8 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent {
-  selected = 0
-  ratingScale =  [...Array(11).keys()]
-  buttonsRequired = ['Required']
+  selected = 0;
+  ratingScale = [...Array(11).keys()];
+  buttonsRequired = ['Required'];
+  elementType = 'Rating';
+  question = '';
+
   @Input() questionNumber !: number;
+  @Input() formTarget !: AnchorDirective;
 }

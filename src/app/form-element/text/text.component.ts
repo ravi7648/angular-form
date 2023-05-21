@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-
+import { AnchorDirective } from 'src/app/anchor.directive';
 
 @Component({
   selector: 'app-text',
@@ -9,6 +9,10 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class TextComponent {
   isLongAnswer = false;
-  buttonsRequired = ['Required', 'LongAnswer']
+  buttonsRequired = ['Required', 'LongAnswer'];
+  elementType = 'Text';
+  question = '';
+
   @Input() questionNumber !: number;
+  @Input() formTarget !: AnchorDirective;
 }

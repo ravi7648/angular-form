@@ -8,9 +8,9 @@ describe('BottomIconsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BottomIconsComponent ]
+      declarations: [BottomIconsComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BottomIconsComponent);
     component = fixture.componentInstance;
