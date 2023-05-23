@@ -28,7 +28,7 @@ export class FormElementComponent implements OnChanges{
 
   ngOnChanges() { 
     if (this.draggable)
-      this.customStyle = `box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;`;
+      this.customStyle = `animation: shake 4.72s ease-in-out 0s;`;
     else
       this.customStyle = '';
   }
