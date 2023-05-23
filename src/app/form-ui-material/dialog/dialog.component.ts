@@ -11,16 +11,19 @@ export class DialogComponent {
   @Input() dialogQuestion !: string;
   @Input() dialogTitle !: string;
 
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    const customDialog = this.dialog.open(CustomDialogComponent, {
+  dialogButtons: Array<string> = ['No', 'Ok'];
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string, dialog: MatDialog = this.dialog, dialogTitle: string = this.dialogTitle, dialogQuestion: string = this.dialogQuestion, buttons: Array<string> = this.dialogButtons): void {
+    const customDialog = dialog.open(CustomDialogComponent, {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
       panelClass: 'purple-dialog'
     });
 
-    customDialog.componentInstance.dialogQuestion = this.dialogQuestion;
-    customDialog.componentInstance.dialogTitle = this.dialogTitle;
+    customDialog.componentInstance.dialogQuestion = dialogQuestion;
+    customDialog.componentInstance.dialogTitle = dialogTitle;
+    customDialog.componentInstance.dialogButtons = buttons
   }
 }
 
@@ -33,4 +36,5 @@ export class CustomDialogComponent {
 
   @Input() dialogQuestion !: string;
   @Input() dialogTitle !: string
+  @Input() dialogButtons !: Array<string>;
 }
