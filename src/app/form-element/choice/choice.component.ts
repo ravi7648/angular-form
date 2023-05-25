@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
-import { AnchorDirective } from 'src/app/anchor.directive';
+import { AnchorDirective } from '../../directive/anchor.directive';;
 
 @Component({
   selector: 'app-choice',

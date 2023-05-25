@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { AnchorDirective } from '../anchor.directive';
+import { AnchorDirective } from '../directive/anchor.directive';
 
 @Component({
   selector: 'app-form-view',

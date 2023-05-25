@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, inject } from '@angular/core';
 import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
-import { AnchorDirective } from 'src/app/anchor.directive';
+import { AnchorDirective } from '../../directive/anchor.directive';;
 import { ChoiceComponent } from 'src/app/form-element/choice/choice.component';
 import { DateComponent } from 'src/app/form-element/date/date.component';
 import { EmailComponent } from 'src/app/form-element/email/email.component';

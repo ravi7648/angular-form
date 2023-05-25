@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormDataService } from '../service/form-data.service';
 
 @Component({
   selector: 'app-form-preview',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-preview.component.css']
 })
 export class FormPreviewComponent {
+  constructor(private formDataStore : FormDataService) { }
 
+  formElements = this.formDataStore.getData();
 }

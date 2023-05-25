@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DialogComponent, CustomDialogComponent } from '../form-ui-material/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FormDataService } from '../service/form-data.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./form-header.component.css']
 })
 export class FormHeaderComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private formDataStore : FormDataService) { }
   actionName = 'Save';
   actionMessage = 'Form saved successfully';
   actionStatus = 'OK';
@@ -19,6 +20,10 @@ export class FormHeaderComponent {
   @Input() draggable: boolean = false;
 
   @Output() draggableChange = new EventEmitter<boolean>();
+
+  saveForm() {
+    this.formDataStore.saveData();
+  }
 
   toggleDraggable(draggable: boolean) {
     this.draggableChange.emit(draggable);

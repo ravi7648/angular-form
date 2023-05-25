@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { TextComponent } from './text/text.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { DateComponent } from './date/date.component';
 import { EmailComponent } from './email/email.component';
 import { RatingComponent } from './rating/rating.component';
-import { AnchorDirective } from '../anchor.directive';
+import { AnchorDirective } from '../directive/anchor.directive';
+import { FormDataService } from '../service/form-data.service';
 
 @Component({
   selector: 'app-form-element',
@@ -15,7 +16,7 @@ import { AnchorDirective } from '../anchor.directive';
 
 export class FormElementComponent implements OnChanges{
 
-  constructor() { }
+  constructor(private formDataStore : FormDataService) { }
   
   inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating']
   totalCount: number = 0;
@@ -49,6 +50,16 @@ export class FormElementComponent implements OnChanges{
     if (draggable) return;
     this.questionNumber++;
     const viewContainerRef = this.formTarget.viewContainerRef;
+    let element = {
+      id: this.questionNumber,
+      question: 'Question',
+      type: component,
+      required: false,
+      longAnswer: false,
+      choices: [],
+    }
+    this.formDataStore.setElements(element);
+
     switch (component) {
       case 'Text': const textRef = viewContainerRef.createComponent(TextComponent);
         textRef.instance.questionNumber = this.questionNumber;

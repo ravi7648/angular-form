@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { AnchorDirective } from 'src/app/anchor.directive';
+import { AnchorDirective } from '../../directive/anchor.directive';;
 
 @Component({
   selector: 'app-text',

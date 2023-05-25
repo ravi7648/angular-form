@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AnchorDirective } from '../anchor.directive';
+import { AnchorDirective } from '../directive/anchor.directive';
 
 @Component({
   selector: 'app-form-edit-view',

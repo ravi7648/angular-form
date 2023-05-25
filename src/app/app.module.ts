@@ -29,11 +29,12 @@ import { DateComponent } from './form-element/date/date.component';
 import { EmailComponent } from './form-element/email/email.component';
 import { RatingComponent } from './form-element/rating/rating.component';
 import { ChoiceComponent } from './form-element/choice/choice.component';
-import { AnchorDirective } from './anchor.directive';
+import { AnchorDirective } from './directive/anchor.directive';
 import { QuestionComponent } from './form-element/question/question.component';
 import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.component';
 import { DialogComponent, CustomDialogComponent } from './form-ui-material/dialog/dialog.component';
 import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.component';
+import { FormDataService } from './service/form-data.service';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,9 @@ import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.componen
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    FormDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
