@@ -18,23 +18,23 @@ interface FormElement {
   providedIn: 'root',
 })
 export class FormDataService {
-  constructor() {}
+  constructor() { }
   form: Form = {
     title: 'Untitled Form',
     elements: []
   };
-  
+
   key: string = 'formData';
 
-  public setTitle(title: string) {
+  public setFormTitle(title: string) {
     this.form.title = title;
   }
 
-  public getTitle() {
-    return this.form.title
+  public getFormTitle() {
+    return JSON.parse("" + localStorage.getItem(this.key)).title;
   }
 
-  public setElements(element: FormElement) {
+  public insertElement(element: FormElement) {
     this.form.elements.push(element);
   }
 
@@ -46,8 +46,8 @@ export class FormDataService {
     localStorage.setItem(this.key, JSON.stringify(this.form));
   }
 
-  public getData() {
-    return localStorage.getItem(this.key);
+  public getFormElements() {
+    return JSON.parse("" + localStorage.getItem(this.key)).elements;
   }
 
   public removeData(key: string) {

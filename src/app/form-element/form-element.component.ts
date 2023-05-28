@@ -58,7 +58,7 @@ export class FormElementComponent implements OnChanges{
       longAnswer: false,
       choices: [],
     }
-    this.formDataStore.setElements(element);
+    this.formDataStore.insertElement(element);
 
     switch (component) {
       case 'Text': const textRef = viewContainerRef.createComponent(TextComponent);
@@ -96,6 +96,7 @@ export class FormElementComponent implements OnChanges{
   clearForm() {
     const viewContainerRef = this.formTarget.viewContainerRef;
     this.questionNumber = 0;
+    this.formDataStore.clearData();
     viewContainerRef.clear();
   }
 }

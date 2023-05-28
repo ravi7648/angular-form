@@ -3,7 +3,11 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #ABD2D3;
+    background-color: #abd2d3;
+    background: url(https://forms.office.com/cdn/images/aio/wave-pattern-v1.svg) center top / cover no-repeat,
+        linear-gradient(180deg,
+            rgba(3, 120, 124, 0.2) 0%,
+            rgba(3, 120, 124, 0.8) 100%);
 }
 
 #form-container {
@@ -30,7 +34,7 @@
 }
 
 #form-container::-webkit-scrollbar-thumb {
-    background: #03787C;
+    background: #03787c;
     border-radius: 5px;
 }
 

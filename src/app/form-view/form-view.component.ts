@@ -1,5 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { AnchorDirective } from '../directive/anchor.directive';
+import { FormDataService } from '../service/form-data.service';
+import { NetworkWifiTwoTone } from '@mui/icons-material';
 
 @Component({
   selector: 'app-form-view',
@@ -7,6 +9,8 @@ import { AnchorDirective } from '../directive/anchor.directive';
   styleUrls: ['./form-view.component.css']
 })
 export class FormViewComponent {
+  constructor(private formDataStore: FormDataService) { }
+
   @Input() formTitle !: string;
   @Input() formTarget !: AnchorDirective;
   @Output() formTitleChange = new EventEmitter<string>();
@@ -17,7 +21,10 @@ export class FormViewComponent {
   @ViewChild(AnchorDirective) targetForm !: AnchorDirective;
 
   changeTitle() {
-    this.formTitleChange.emit(this.eleRef.nativeElement.innerText)
+    let newFormTitle = this.eleRef.nativeElement.innerText
+    this.formDataStore.setFormTitle(newFormTitle);
+    this.formTitleChange.emit(newFormTitle)
+
   }
 
   assignFormTarget(value: AnchorDirective) {

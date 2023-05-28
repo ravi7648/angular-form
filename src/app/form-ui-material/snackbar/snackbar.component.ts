@@ -6,6 +6,7 @@ import { DateComponent } from 'src/app/form-element/date/date.component';
 import { EmailComponent } from 'src/app/form-element/email/email.component';
 import { RatingComponent } from 'src/app/form-element/rating/rating.component';
 import { TextComponent } from 'src/app/form-element/text/text.component';
+import { FormDataService } from 'src/app/service/form-data.service';
 
 @Component({
   selector: 'app-snackbar',
@@ -13,7 +14,7 @@ import { TextComponent } from 'src/app/form-element/text/text.component';
   styleUrls: ['./snackbar.component.css'],
 })
 export class SnackbarComponent {
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, private formDataStore: FormDataService) { }
 
   @Input() snackbarMessage!: string;
   @Input() snackbarAction!: string;
@@ -45,6 +46,16 @@ export class SnackbarComponent {
   createElement() {
     this.questionNumber++;
     const viewContainerRef = this.formTarget.viewContainerRef;
+
+    let element = {
+      id: this.questionNumber,
+      question: this.question,
+      type: this.elementType,
+      required: false,
+      longAnswer: false,
+      choices: [],
+    }
+    this.formDataStore.insertElement(element);
 
     switch (this.elementType) {
       case 'Text': const textRef = viewContainerRef.createComponent(TextComponent);

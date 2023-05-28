@@ -1,0 +1,42 @@
+#preview-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ABD2D3;
+    overflow: scroll;
+    background: url(https://forms.office.com/cdn/images/aio/wave-pattern-v1.svg) center top / cover no-repeat, linear-gradient(180deg, rgba(3, 120, 124, 0.2) 0%, rgba(3, 120, 124, 0.8) 100%);
+}
+
+#preview-form-container {
+    width: 100%;
+    height: max-content;
+    max-width: 800px;
+    background-color: #E8F2F3;
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
+#preview-form-title {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    padding: 20px 20px;
+    height: 50px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #03787C;
+}
+
+#preview-form-elements {
+    padding: 20px 50px;
+}
+
+.element-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}

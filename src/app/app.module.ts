@@ -35,6 +35,7 @@ import { BottomIconsComponent } from './form-element/bottom-icons/bottom-icons.c
 import { DialogComponent, CustomDialogComponent } from './form-ui-material/dialog/dialog.component';
 import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.component';
 import { FormDataService } from './service/form-data.service';
+import { FormDataPipe } from './pipe/form-data.pipe';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { FormDataService } from './service/form-data.service';
     BottomIconsComponent,
     DialogComponent,
     CustomDialogComponent,
-    SnackbarComponent
+    SnackbarComponent,
+    FormDataPipe
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ export class FormHeaderComponent {
 
   @Input() formTitle !: string;
   @Input() draggable: boolean = false;
-
+  @Input() preview: boolean = false;
   @Output() draggableChange = new EventEmitter<boolean>();
 
   saveForm() {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormDataService } from '../service/form-data.service';
 
 @Component({
@@ -6,8 +6,15 @@ import { FormDataService } from '../service/form-data.service';
   templateUrl: './form-preview.component.html',
   styleUrls: ['./form-preview.component.css']
 })
-export class FormPreviewComponent {
-  constructor(private formDataStore : FormDataService) { }
+export class FormPreviewComponent implements OnInit {
+  constructor(private formDataStore: FormDataService) { }
 
-  formElements = this.formDataStore.getData();
+  preview = true;
+  formElements !: any;
+  formTitle: any;
+
+  ngOnInit(): void {
+    this.formElements = this.formDataStore.getFormElements();
+    this.formTitle = this.formDataStore.getFormTitle();
+  }
 }

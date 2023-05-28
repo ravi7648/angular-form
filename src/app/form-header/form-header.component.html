@@ -1,10 +1,15 @@
-<div class="flex-row flex-center" style="color: white">
+<div  *ngIf="!preview" class="flex-row flex-center" style="color: white">
   <mat-icon>insert_drive_file</mat-icon>
   <h4 id="form-title">{{ formTitle }}</h4>
 </div>
 
-<div class="right-icon">
-  <a mat-icon-button href="/preview" target="_blank" style="color: white">
+<div *ngIf="preview" class="flex-row flex-center" style="color: white; cursor: pointer;" onclick="history.back()">
+  <mat-icon>arrow_back</mat-icon>
+  <h4 id="form-title">Back</h4>
+</div>
+
+<div *ngIf="!preview" class="right-icon">
+  <a mat-icon-button href="/preview" style="color: white">
     <mat-icon>visibility</mat-icon>
   </a>
   <span> Preview </span>
