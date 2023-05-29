@@ -6,7 +6,7 @@
   <button *ngIf="dialogButtons.includes('No')" mat-button mat-dialog-close>
     No
   </button>
-  <button *ngIf="dialogButtons.includes('Ok')" mat-button mat-dialog-close cdkFocusInitial>
+  <button *ngIf="dialogButtons.includes('Ok')" mat-button mat-dialog-close cdkFocusInitial (click)="deleteElement()">
     Ok
   </button>
 </div>

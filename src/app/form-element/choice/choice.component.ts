@@ -30,7 +30,6 @@ export class ChoiceComponent {
 
   addChoice(type: string) {
     const choiceRef = (type == "otherOption") ? this.otherRef.createEmbeddedView(this.choiceOtherRef) : this.vRef.createEmbeddedView(this.choiceRef);
-    console.log(choiceRef.rootNodes[0]);    
     choiceRef.rootNodes[0].querySelector('input').addEventListener('blur', () => this.updateChoiceToForm(choiceRef.rootNodes[0].querySelector('input')));
     
     if (!this.clicked) this.clicked = (type == "otherOption");
