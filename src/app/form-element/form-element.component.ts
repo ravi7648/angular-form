@@ -15,21 +15,21 @@ import { UploadComponent } from './upload/upload.component';
   encapsulation: ViewEncapsulation.None
 })
 
-export class FormElementComponent implements OnChanges{
+export class FormElementComponent implements OnChanges {
 
-  constructor(private formDataStore : FormDataService) { }
-  
+  constructor(private formDataStore: FormDataService) { }
+
   inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating', 'Upload']
   icons = ['text_format', 'radio_button_checked', 'alternate_email', 'date_range', 'thumb_up', 'arrow_upward']
   totalCount: number = 0;
   selected = 'Text';
   customStyle: string = '';
-  
-  @Input() draggable : boolean = false;
+
+  @Input() draggable: boolean = false;
   @Input() formTarget !: AnchorDirective;
   @Input() questionNumber !: number;
 
-  ngOnChanges() { 
+  ngOnChanges() {
     if (this.draggable)
       this.customStyle = `animation: shake 4.72s ease-in-out 0s;`;
     else
@@ -59,6 +59,7 @@ export class FormElementComponent implements OnChanges{
       required: false,
       longAnswer: false,
       choices: ["Choice 1", "Choice 2"],
+      multipleAnswer: false
     }
     this.formDataStore.insertElement(element);
 

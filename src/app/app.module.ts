@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { FormsModule } from '@angular/forms';
@@ -78,6 +79,7 @@ import { UploadComponent } from './form-element/upload/upload.component';
     MatDialogModule,
     MatTooltipModule,
     MatRadioModule,
+    MatCheckboxModule,
     ClipboardModule,
     DragDropModule,
     ReactiveFormsModule,

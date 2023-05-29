@@ -10,7 +10,7 @@
   </div>
   <mat-form-field class="mat-input-field">
     <form>
-      <input placeholder="Question" matInput [(ngModel)]="questionText" [value]="questionText" name="question" />
+      <input placeholder="Question" matInput [(ngModel)]="questionText" [value]="questionText" name="question" (blur)="updateElementQuestion(questionText, questionNumber)"/>
     </form>
   </mat-form-field>
 </div>

@@ -11,6 +11,6 @@
       <textarea matInput placeholder="Enter your Answer" cdkTextareaAutosize disabled="true"></textarea>
     </mat-form-field>
   </div>
-  <app-bottom-icons [isChecked]="isLongAnswer" (isCheckedChange)="isLongAnswer = $event"
+  <app-bottom-icons [questionNumber]="questionNumber" [isChecked]="isLongAnswer" (isCheckedChange)="isLongAnswer = $event"
     [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

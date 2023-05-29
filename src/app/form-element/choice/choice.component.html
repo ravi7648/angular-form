@@ -6,7 +6,7 @@
       <div class="{{ choiceType }}"></div>
       <div class="radio-element-component">
         <mat-form-field class="mat-input-field">
-          <input matInput placeholder="Enter your option" disabled="false" />
+          <input matInput placeholder="Enter your option" disabled="false"/>
         </mat-form-field>
       </div>
     </div>
@@ -22,24 +22,24 @@
     </div>
   </ng-template>
   <div #choiceBoxRef class="flex-col choices" style="gap: 5px">
-    <div *ngFor="let i of options" class="flex-row radio-element">
+    <div *ngFor="let option of options; let i = index" class="flex-row radio-element">
       <div class="{{ choiceType }}"></div>
       <div class="radio-element-component">
         <mat-form-field class="mat-input-field">
-          <input matInput placeholder="Enter your option" disabled="false" />
+          <input #choiceRef matInput placeholder="Enter your option" disabled="false" (blur)="updateChoiceToForm(choiceRef)"/>
         </mat-form-field>
       </div>
     </div>
   </div>
   <ng-container #choiceOtherContainerRef></ng-container>
   <button type="button" style="margin-top: 20px" class="radio-element-btn" mat-button
-    (click)="addChoice('customOption')">
+    (click)="addChoice('customOption'); addChoiceToForm('customOption');">
     <mat-icon>add</mat-icon> Add option
   </button>
   <button *ngIf="!clicked" type="button" style="margin-top: 20px" class="radio-element-btn" mat-button
-    (click)="addChoice('otherOption')">
+    (click)="addChoice('otherOption'); addChoiceToForm('otherOption');">
     Add "other" option
   </button>
-  <app-bottom-icons [isChecked]="choiceType" (isCheckedChange)="choiceType = $event"
+  <app-bottom-icons [questionNumber]="questionNumber" [isChecked]="choiceType" (isCheckedChange)="choiceType = $event"
     [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

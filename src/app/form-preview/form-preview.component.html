@@ -5,6 +5,7 @@
       <span style="font-size: 35px; margin: 0">{{ formTitle }}</span>
     </div>
     <div id="preview-form-elements">
+      <div style="color: #bc2f32; margin-bottom: 20px;">* <span style="color: black">Required</span></div>
       <form onsubmit="alert('Thanks for submitting your response.')">
         <div *ngFor="let element of formElements; let i = index">
           <div class="element-container">
@@ -19,15 +20,24 @@
             </div>
             <ng-container [ngSwitch]="element.type">
               <mat-form-field *ngSwitchCase="'Text'">
-                <input type="text" matInput placeholder="Enter your Text" />
+                <input *ngIf="!element.longAnswer" type="text" matInput placeholder="Enter your Text" />
+                <textarea *ngIf="element.longAnswer" matInput placeholder="Enter your answer"
+                  cdkTextareaAutosize></textarea>
               </mat-form-field>
               <mat-form-field *ngSwitchCase="'Email'">
                 <input type="email" matInput placeholder="Enter your Email" />
               </mat-form-field>
               <mat-radio-group *ngSwitchCase="'Choice'">
-                <mat-radio-button style="display: block;" *ngFor="let choice of element.choices">
-                  {{ choice }}
-                </mat-radio-button>
+                <div *ngIf="!element.multipleAnswer">
+                  <mat-radio-button style="display: block;" *ngFor="let choice of element.choices">
+                    {{ choice }}
+                  </mat-radio-button>
+                </div>
+                <div *ngIf="element.multipleAnswer">
+                  <mat-checkbox style="display: block;" *ngFor="let choice of element.choices">
+                    {{choice}}
+                  </mat-checkbox>
+                </div>
               </mat-radio-group>
               <mat-form-field *ngSwitchCase="'Rating'">
                 <mat-select [(value)]="selected">
@@ -50,7 +60,8 @@
               </mat-form-field>
               <div *ngSwitchCase="'Upload'">
                 <input #uploadInput hidden="true" type="file" onclick="this.value=null" />
-                <button type="button" mat-flat-button class='add-btn' color="primary" (click)="uploadInput.click()">Upload
+                <button type="button" mat-flat-button class='add-btn' color="primary"
+                  (click)="uploadInput.click()">Upload
                   <mat-icon>arrow_upward</mat-icon>
                   file
                 </button>

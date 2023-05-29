@@ -12,6 +12,7 @@ interface FormElement {
   required: Boolean;
   longAnswer: Boolean;
   choices: String[];
+  multipleAnswer: Boolean;
 }
 
 @Injectable({

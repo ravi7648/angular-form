@@ -54,6 +54,7 @@ export class SnackbarComponent {
       required: false,
       longAnswer: false,
       choices: [],
+      multipleAnswer: false
     }
     this.formDataStore.insertElement(element);
 
