@@ -1,18 +1,8 @@
 <div class="flex-row element-menu">
-  <app-snackbar
-    [questionNumber]="questionNumber"
-    [formTarget]="formTarget"
-    [elementType]="elementType"
-    [question]="questionText"
-    [showClipboard]="showClipboard"
-    [snackbarDuration]="snackbarDuration"
-    [snackbarMessage]="actionMessage"
-    [snackbarAction]="actionStatus"
-  ></app-snackbar>
-  <app-dialog
-    [dialogQuestion]="dialogQuestion"
-    [dialogTitle]="dialogTitle"
-  ></app-dialog>
+  <app-snackbar [questionNumber]="questionNumber" [formTarget]="formTarget" [elementType]="elementType"
+    [question]="questionText" [showClipboard]="showClipboard" [snackbarDuration]="snackbarDuration"
+    [snackbarMessage]="actionMessage" [snackbarAction]="actionStatus"></app-snackbar>
+  <app-dialog [dialogQuestion]="dialogQuestion" [dialogTitle]="dialogTitle"></app-dialog>
 </div>
 <div class="flex-row element-question">
   <div style="margin-right: 10px; font-weight: 500; width: 10px">
@@ -20,13 +10,7 @@
   </div>
   <mat-form-field class="mat-input-field">
     <form>
-      <input
-        placeholder="Question"
-        matInput
-        [(ngModel)]="questionText"
-        [value]="questionText"
-        name="question"
-      />
+      <input placeholder="Question" matInput [(ngModel)]="questionText" [value]="questionText" name="question" />
     </form>
   </mat-form-field>
 </div>

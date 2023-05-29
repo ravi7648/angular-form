@@ -1,10 +1,6 @@
 <form class="form-box">
-  <app-question
-    [formTarget]="formTarget"
-    [elementType]="elementType"
-    [questionNumber]="questionNumber"
-    [questionText]="question"
-  ></app-question>
+  <app-question [formTarget]="formTarget" [elementType]="elementType" [questionNumber]="questionNumber"
+    [questionText]="question"></app-question>
   <div class="element-component flex-row">
     <mat-form-field style="width: 300px">
       <mat-select [(value)]="selected">
@@ -13,10 +9,7 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <div
-      class="hint-box flex-col flex-center"
-      style="margin-left: 20px; font-weight: 500"
-    >
+    <div class="hint-box flex-col flex-center" style="margin-left: 20px; font-weight: 500">
       <div>0 - Not at all likely</div>
       <div>10 - Extremely Likely</div>
     </div>

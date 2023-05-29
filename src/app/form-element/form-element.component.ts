@@ -6,6 +6,7 @@ import { EmailComponent } from './email/email.component';
 import { RatingComponent } from './rating/rating.component';
 import { AnchorDirective } from '../directive/anchor.directive';
 import { FormDataService } from '../service/form-data.service';
+import { UploadComponent } from './upload/upload.component';
 
 @Component({
   selector: 'app-form-element',
@@ -18,7 +19,7 @@ export class FormElementComponent implements OnChanges{
 
   constructor(private formDataStore : FormDataService) { }
   
-  inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating']
+  inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating', 'Upload']
   totalCount: number = 0;
   selected = 'Text';
   customStyle: string = '';
@@ -56,7 +57,7 @@ export class FormElementComponent implements OnChanges{
       type: component,
       required: false,
       longAnswer: false,
-      choices: [],
+      choices: ["Choice 1", "Choice 2"],
     }
     this.formDataStore.insertElement(element);
 
@@ -80,6 +81,10 @@ export class FormElementComponent implements OnChanges{
       case 'Rating': const ratingRef = viewContainerRef.createComponent(RatingComponent);
         ratingRef.instance.questionNumber = this.questionNumber;
         ratingRef.instance.formTarget = this.formTarget;
+        break
+      case 'Upload': const uploadRef = viewContainerRef.createComponent(UploadComponent);
+        uploadRef.instance.questionNumber = this.questionNumber;
+        uploadRef.instance.formTarget = this.formTarget;
         break
     }
   }

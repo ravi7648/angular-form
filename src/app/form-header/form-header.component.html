@@ -1,4 +1,4 @@
-<div  *ngIf="!preview" class="flex-row flex-center" style="color: white">
+<div *ngIf="!preview" class="flex-row flex-center" style="color: white">
   <mat-icon>insert_drive_file</mat-icon>
   <h4 id="form-title">{{ formTitle }}</h4>
 </div>
@@ -14,20 +14,12 @@
   </a>
   <span> Preview </span>
 
-  <app-snackbar
-    [snackbarDuration]="snackbarDuration"
-    [snackbarMessage]="actionMessage"
-    [snackbarAction]="actionStatus"
-    (click)="saveForm()"
-  >
+  <app-snackbar [snackbarDuration]="snackbarDuration" [snackbarMessage]="actionMessage" [snackbarAction]="actionStatus"
+    (click)="saveForm()">
     <mat-icon>save</mat-icon>
   </app-snackbar>
   <span> Save </span>
-  <mat-slide-toggle
-    matTooltip="Enable Drag & Drop"
-    color="primary"
-    style="margin-left: 15px"
-    (change)="toggleDraggable($event.checked)"
-  >
+  <mat-slide-toggle matTooltip="Enable Drag & Drop" color="primary" style="margin-left: 15px"
+    (change)="toggleDraggable($event.checked)">
   </mat-slide-toggle>
 </div>

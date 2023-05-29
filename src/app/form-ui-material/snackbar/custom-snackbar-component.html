@@ -2,12 +2,7 @@
   {{snackbarMessage}}
 </span>
 <span matSnackBarActions>
-  <button
-    class="custom-snackbar-action"
-    mat-button
-    matSnackBarAction
-    (click)="snackBarRef.dismissWithAction()"
-  >
+  <button class="custom-snackbar-action" mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()">
     {{snackbarAction}}
   </button>
 </span>

@@ -1,15 +1,7 @@
 <div class="input-element">
-  <button
-    *ngFor="let element of inputs"
-    class="add-btn"
-    [style]="customStyle"
-    mat-raised-button
-    color="primary"
-    (click)="addElement(element, draggable)"
-    (cdkDragEnded)="onDragEnded($event)"
-    cdkDrag
-    [cdkDragDisabled]="!draggable"
-  >
+  <button *ngFor="let element of inputs" class="add-btn" [style]="customStyle" mat-raised-button color="primary"
+    (click)="addElement(element, draggable)" (cdkDragEnded)="onDragEnded($event)" cdkDrag
+    [cdkDragDisabled]="!draggable">
     {{ element }}
   </button>
   <div style="margin-top: 75px" class="bulk-add">
@@ -34,21 +26,12 @@
       </button>
     </div>
     <div style="margin-top: 20px" class="flex-row flex-center">
-      <button
-        mat-raised-button
-        color="basic"
-        (click)="addBulkElements(selected, totalCount)"
-      >
+      <button mat-raised-button color="basic" (click)="addBulkElements(selected, totalCount)">
         Add {{ totalCount }} {{ selected | lowercase }} elements
       </button>
     </div>
   </div>
-  <button
-    class="add-btn"
-    mat-raised-button
-    color="primary"
-    (click)="clearForm()"
-  >
+  <button class="add-btn" mat-raised-button color="primary" (click)="clearForm()">
     Clear form
   </button>
 </div>

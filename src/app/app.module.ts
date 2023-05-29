@@ -14,6 +14,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { FormsModule } from '@angular/forms';
@@ -36,6 +37,7 @@ import { DialogComponent, CustomDialogComponent } from './form-ui-material/dialo
 import { SnackbarComponent } from './form-ui-material/snackbar/snackbar.component';
 import { FormDataService } from './service/form-data.service';
 import { FormDataPipe } from './pipe/form-data.pipe';
+import { UploadComponent } from './form-element/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { FormDataPipe } from './pipe/form-data.pipe';
     DialogComponent,
     CustomDialogComponent,
     SnackbarComponent,
-    FormDataPipe
+    FormDataPipe,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ import { FormDataPipe } from './pipe/form-data.pipe';
     MatSnackBarModule,
     MatDialogModule,
     MatTooltipModule,
+    MatRadioModule,
     ClipboardModule,
     DragDropModule,
     ReactiveFormsModule,

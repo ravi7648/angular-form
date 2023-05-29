@@ -9,29 +9,54 @@
         <div *ngFor="let element of formElements; let i = index">
           <div class="element-container">
             <div class="element-question">
-              {{i + 1}}.{{" "+element.question}}
+              {{ i + 1 }}.{{ " " + element.question }}
+              <span *ngIf="element.required" style="color: #bc2f32">*</span>
+              <b style="margin-left: 10px">{{
+                element.type == "Rating"
+                ? "0 - Not at all likely, 10 - Extremely Likely"
+                : ""
+                }}</b>
             </div>
-            <mat-form-field class="mat-input-field">
-              <ng-template *ngSwitch="element.type">
-                <input *ngSwitchCase="'Text'" matInput placeholder="Enter your Text"/>
-                <input *ngSwitchCase="'Choice'" matInput placeholder="Enter your Choice"/>
-                <input *ngSwitchCase="'Email'" matInput placeholder="Enter your Email"/>
-                <input *ngSwitchCase="'Rating'" matInput placeholder="Enter your rating"/>
-                <input *ngSwitchDefault matInput placeholder="Default"/>
-              </ng-template>
-            </mat-form-field>
+            <ng-container [ngSwitch]="element.type">
+              <mat-form-field *ngSwitchCase="'Text'">
+                <input type="text" matInput placeholder="Enter your Text" />
+              </mat-form-field>
+              <mat-form-field *ngSwitchCase="'Email'">
+                <input type="email" matInput placeholder="Enter your Email" />
+              </mat-form-field>
+              <mat-radio-group *ngSwitchCase="'Choice'">
+                <mat-radio-button *ngFor="let choice of element.choices">
+                  {{ choice }}
+                </mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field *ngSwitchCase="'Rating'">
+                <mat-select [(value)]="selected">
+                  <mat-option *ngFor="let rate of ratingScale" [value]="rate">
+                    {{ rate }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field *ngSwitchCase="'Date'">
+                <input matInput [matDatepicker]="datepicker" placeholder="Select date [MM/DD/YYYY]" />
+                <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                  <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>
+                      Apply
+                    </button>
+                  </mat-datepicker-actions>
+                </mat-datepicker>
+              </mat-form-field>
+              <div *ngSwitchCase="'Upload'">
+                <input #uploadInput hidden="true" type="file" onclick="this.value=null" />
+                <button mat-flat-button class='add-btn' color="primary" (click)="uploadInput.click()">Upload
+                  file</button>
+              </div>
+            </ng-container>
           </div>
-          <!-- <app-form-element
-                    [element]="element"
-                    [preview]="preview"
-                ></app-form-element> -->
         </div>
-        <button
-          type="submit"
-          style="margin-top: 20px"
-          class="add-btn"
-          mat-raised-button
-        >
+        <button type="submit" style="margin-top: 20px" class="add-btn" mat-raised-button>
           submit
         </button>
       </form>

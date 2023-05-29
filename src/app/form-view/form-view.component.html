@@ -1,20 +1,9 @@
 <div id="form-container">
-  <div
-    #title
-    id="title"
-    contenteditable="true"
-    (blur)="changeTitle()"
-    spellcheck="false"
-  >
+  <div #title id="title" contenteditable="true" (blur)="changeTitle()" spellcheck="false">
     {{ formTitle }}
   </div>
   <ng-template formBody></ng-template>
-  <button
-    style="margin-top: 20px"
-    class="add-btn"
-    mat-raised-button
-    (click)="assignFormTarget(targetForm)"
-  >
+  <button style="margin-top: 20px" class="add-btn" mat-raised-button (click)="assignFormTarget(targetForm)">
     <mat-icon>add</mat-icon> Add
   </button>
 </div>

@@ -1,10 +1,5 @@
 <button *ngIf="!showClipboard" mat-icon-button (click)="openSnackBar()">
   <ng-content></ng-content>
 </button>
-<mat-icon
-  *ngIf="showClipboard"
-  (click)="openSnackBar(); createElement()"
-  style="cursor: pointer"
-  [cdkCopyToClipboard]="question"
-  >content_copy</mat-icon
->
+<mat-icon *ngIf="showClipboard" (click)="openSnackBar(); createElement()" style="cursor: pointer"
+  [cdkCopyToClipboard]="question">content_copy</mat-icon>

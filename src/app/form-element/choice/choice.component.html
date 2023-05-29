@@ -1,10 +1,6 @@
 <form class="form-box">
-  <app-question
-    [formTarget]="formTarget"
-    [elementType]="elementType"
-    [questionNumber]="questionNumber"
-    [questionText]="question"
-  ></app-question>
+  <app-question [formTarget]="formTarget" [elementType]="elementType" [questionNumber]="questionNumber"
+    [questionText]="question"></app-question>
   <ng-template #choiceRef>
     <div class="flex-row radio-element">
       <div class="{{ choiceType }}"></div>
@@ -36,28 +32,14 @@
     </div>
   </div>
   <ng-container #choiceOtherContainerRef></ng-container>
-  <button
-    type="button"
-    style="margin-top: 20px"
-    class="radio-element-btn"
-    mat-button
-    (click)="addChoice('customOption')"
-  >
+  <button type="button" style="margin-top: 20px" class="radio-element-btn" mat-button
+    (click)="addChoice('customOption')">
     <mat-icon>add</mat-icon> Add option
   </button>
-  <button
-    *ngIf="!clicked"
-    type="button"
-    style="margin-top: 20px"
-    class="radio-element-btn"
-    mat-button
-    (click)="addChoice('otherOption')"
-  >
+  <button *ngIf="!clicked" type="button" style="margin-top: 20px" class="radio-element-btn" mat-button
+    (click)="addChoice('otherOption')">
     Add "other" option
   </button>
-  <app-bottom-icons
-    [isChecked]="choiceType"
-    (isCheckedChange)="choiceType = $event"
-    [buttonsRequired]="buttonsRequired"
-  ></app-bottom-icons>
+  <app-bottom-icons [isChecked]="choiceType" (isCheckedChange)="choiceType = $event"
+    [buttonsRequired]="buttonsRequired"></app-bottom-icons>
 </form>

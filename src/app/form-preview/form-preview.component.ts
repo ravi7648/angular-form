@@ -12,6 +12,8 @@ export class FormPreviewComponent implements OnInit {
   preview = true;
   formElements !: any;
   formTitle: any;
+  selected = 0;
+  ratingScale = [...Array(11).keys()];
 
   ngOnInit(): void {
     this.formElements = this.formDataStore.getFormElements();
