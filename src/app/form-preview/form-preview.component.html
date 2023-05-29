@@ -5,7 +5,7 @@
       <span style="font-size: 35px; margin: 0">{{ formTitle }}</span>
     </div>
     <div id="preview-form-elements">
-      <form>
+      <form onsubmit="alert('Thanks for submitting your response.')">
         <div *ngFor="let element of formElements; let i = index">
           <div class="element-container">
             <div class="element-question">
@@ -25,7 +25,7 @@
                 <input type="email" matInput placeholder="Enter your Email" />
               </mat-form-field>
               <mat-radio-group *ngSwitchCase="'Choice'">
-                <mat-radio-button *ngFor="let choice of element.choices">
+                <mat-radio-button style="display: block;" *ngFor="let choice of element.choices">
                   {{ choice }}
                 </mat-radio-button>
               </mat-radio-group>
@@ -50,8 +50,10 @@
               </mat-form-field>
               <div *ngSwitchCase="'Upload'">
                 <input #uploadInput hidden="true" type="file" onclick="this.value=null" />
-                <button mat-flat-button class='add-btn' color="primary" (click)="uploadInput.click()">Upload
-                  file</button>
+                <button type="button" mat-flat-button class='add-btn' color="primary" (click)="uploadInput.click()">Upload
+                  <mat-icon>arrow_upward</mat-icon>
+                  file
+                </button>
               </div>
             </ng-container>
           </div>

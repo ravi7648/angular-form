@@ -20,6 +20,7 @@ export class FormElementComponent implements OnChanges{
   constructor(private formDataStore : FormDataService) { }
   
   inputs = ['Text', 'Choice', 'Email', 'Date', 'Rating', 'Upload']
+  icons = ['text_format', 'radio_button_checked', 'alternate_email', 'date_range', 'thumb_up', 'arrow_upward']
   totalCount: number = 0;
   selected = 'Text';
   customStyle: string = '';
@@ -93,7 +94,7 @@ export class FormElementComponent implements OnChanges{
     let currentDropArea = document.elementFromPoint(event.dropPoint.y, event.dropPoint.x);
     let droppableArea = document.getElementById('form-container');
     if (droppableArea == currentDropArea?.closest('#form-container')) {
-      this.addElement(event.source.element.nativeElement.innerText, false);
+      this.addElement(event.source.element.nativeElement.querySelector('span.button-name').innerText, false);
     }
     event.source.reset();
   }

@@ -1,10 +1,13 @@
 <div class="input-element">
-  <button *ngFor="let element of inputs" class="add-btn" [style]="customStyle" mat-raised-button color="primary"
-    (click)="addElement(element, draggable)" (cdkDragEnded)="onDragEnded($event)" cdkDrag
+  <button *ngFor="let element of inputs; let i = index;" class="add-btn" [style]="customStyle" mat-raised-button
+    color="primary" (click)="addElement(element, draggable)" (cdkDragEnded)="onDragEnded($event)" cdkDrag
     [cdkDragDisabled]="!draggable">
-    {{ element }}
+    <div class="flex-row" style="gap: 10px">
+      <mat-icon>{{icons[i]}}</mat-icon>
+      <span class="button-name">{{ element }}</span>
+    </div>
   </button>
-  <div style="margin-top: 75px" class="bulk-add">
+  <div style="margin-top: 50px" class="bulk-add">
     <mat-form-field>
       <mat-label>Select an option</mat-label>
       <mat-select [(value)]="selected">
